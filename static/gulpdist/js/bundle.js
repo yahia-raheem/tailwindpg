@@ -1,1 +1,694 @@
-!function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=4)}([function(e,t,n){"use strict";n.d(t,"a",(function(){return r})),n.d(t,"b",(function(){return o}));var r=function(e,t){if(void 0!==t.element)return new IntersectionObserver((function(n,r){n.forEach((function(n){n.target;n.isIntersecting&&e(t)}))}),{threshold:.5}).observe(t.element)},o=function(e){var t=e.element,n=e.index,r=t.getAttribute("src"),o=t.getAttribute("id"),i=t.getAttribute("width"),c=t.getAttribute("height"),a=t.getAttribute("class"),u=new XMLHttpRequest;u.onreadystatechange=function(){if(4==this.readyState&&200==this.status){var e=this.responseText.trim(),r=document.createElement("div");r.innerHTML=e;var u=r.querySelector("svg");null!=u&&(null!=o?u.setAttribute("id",o):u.setAttribute("id","replaced-svg-".concat(n)),u.removeAttribute("xmlns:a"),u.setAttribute("class",a),null!=i&&u.setAttribute("width",i),null!=c&&u.setAttribute("height",c),t.parentNode.replaceChild(u,t))}},u.open("GET",r,!0),u.send()}},function(e,t,n){"use strict";n(0);document.addEventListener("DOMContentLoaded",(function(){var e=document.querySelectorAll("[data-trim]"),t=(document.querySelectorAll(".det-res-img"),document.querySelectorAll("[data-replace]"),document.querySelectorAll("[data-mobilesheet]"),screen.width,document.querySelectorAll("[data-removeChildTag]"),document.querySelectorAll("[data-aspectRatio]")),n=document.querySelectorAll("[data-color]"),o=document.querySelectorAll(".menu-icon"),i=document.querySelectorAll(".wpcf7 select");if(void 0!==i&&i.length>0&&i.forEach((function(e){""==e.value&&e.classList.add("untouched");var t=function(t){console.log("fired"),e.classList.remove("untouched"),n()},n=function(){e.removeEventListener("change",t)};e.addEventListener("change",t)})),void 0!==o&&o.length>0){var c=window.location.origin;o.forEach((function(e,t){var n=Array.from(e.classList).find((function(e){return/^icon-/.test(e)}));if(n){var r="".concat(c,"/wp-json/generaldata/v1/getimage/").concat(n.split("-")[1]),o=new XMLHttpRequest;o.onreadystatechange=function(){if(4==this.readyState&&200==this.status){var t=JSON.parse(this.responseText).trim(),r=document.createElement("div");r.innerHTML=t;var o=r.querySelector("img");e.prepend(o),e.classList.remove(n)}},o.open("GET",r,!0),o.send()}}))}void 0!==n&&n.length>0&&n.forEach((function(e){var t=e.getAttribute("data-color");e.style.setProperty("--elm-color",t)})),void 0!==e&&e.length>0&&e.forEach((function(e){var t=e.getAttribute("data-trim");e.innerHTML=e.innerHTML.length>t?e.innerHTML.substring(0,t)+"...":e.innerHTML,e.removeAttribute("data-trim")})),void 0!==t&&t.length>0&&(t.forEach((function(e){var t=e.offsetWidth,n=e.getAttribute("data-aspectRatio"),o=r(n,t);e.style.height="".concat(o,"px")})),window.addEventListener("resize",(function(){t.forEach((function(e){var t=e.offsetWidth,n=e.getAttribute("data-aspectRatio"),o=r(n,t);e.style.height="".concat(o,"px")}))})))}));var r=function(e,t){var n=e.split("/"),r=n[0],o=n[1];return parseInt(t)*parseInt(o)/parseInt(r)}},function(e,t){var n=!1,r=document.getElementById("mySidenav");document.addEventListener("DOMContentLoaded",(function(){var e=document.querySelector(".navbar-toggler"),t=document.querySelector(".closebtn");document.querySelectorAll(".mobile-menu .menu-item").forEach((function(e){e.addEventListener("click",(function(t){if(t.stopPropagation(),e.classList.contains("menu-item-has-children")){var n=e.querySelector(".sub-menu"),r=e.querySelectorAll(".menu-item").length;n.classList.contains("opened")?(e.classList.remove("child-menu-opened"),n.classList.remove("opened"),n.style.maxHeight=0):(e.classList.add("child-menu-opened"),n.classList.add("opened"),n.style.maxHeight="".concat(64*r,"px"))}}))})),e.addEventListener("click",(function(){o(),document.addEventListener("click",c),setTimeout((function(){n=!0}),1e3)})),t.addEventListener("click",(function(){i()}))}));var o=function(){r.style.width="100vw"},i=function(){r.style.width="0",n=!1,a()},c=function(e){!r.contains(e.target)&&n&&i()},a=function(){document.removeEventListener("click",c)}},function(e,t,n){"use strict";var r=n(0);document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll(".style-svg").forEach((function(e,t){Object(r.a)(r.b,{element:e,index:t})}))}))},function(e,t,n){e.exports=n(5)},function(e,t,n){"use strict";n.r(t);n(1),n(2),n(3);document.addEventListener("DOMContentLoaded",(function(){}))}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./static/src/js/bundle.js":
+/*!*********************************!*\
+  !*** ./static/src/js/bundle.js ***!
+  \*********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/helpers */ "./static/src/js/components/helpers.js");
+/* harmony import */ var _components_sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/sidebar */ "./static/src/js/components/sidebar.js");
+/* harmony import */ var _components_sidebar__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_sidebar__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_shared__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/shared */ "./static/src/js/components/shared.js");
+// import "./components/bootstrap-imports";
+// import "slick-carousel";
+// import "./components/my-navbar";
+// import "./components/navigator";
+// import "./components/widgets";
+
+
+ // import $ from "jquery";
+
+document.addEventListener("DOMContentLoaded", function () {}); // $(function () {
+//   $(document).on('click', '.dropdown-menu', function (e) {
+//     e.stopPropagation();
+//   });
+//   var windowSize = $(window).width();
+//   if (windowSize > 1200) {
+//     $("ul.navbar-nav li.dropdown:not(.megamenu)").hover(
+//       function () {
+//         $(this).find(">.dropdown-menu").stop(true, true).delay(50).fadeIn(200);
+//       },
+//       function () {
+//         $(this).find(">.dropdown-menu").stop(true, true).delay(50).fadeOut(200);
+//       }
+//     );
+//   } else {
+//     $("ul.navbar-nav li.dropdown > a.dropdown-toggle")
+//       .attr("href", "#")
+//       .attr("data-toggle", "dropdown")
+//       .removeAttr("data-hover");
+//   }
+// });
+
+/***/ }),
+
+/***/ "./static/src/js/components/helper-funcs.js":
+/*!**************************************************!*\
+  !*** ./static/src/js/components/helper-funcs.js ***!
+  \**************************************************/
+/*! exports provided: setCookie, getCookie, eraseCookie, elementObserver, matchHeight, invertColor, hideOnClickOutside, imgTosvg, compareValues, sortArray */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setCookie", function() { return setCookie; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookie", function() { return getCookie; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eraseCookie", function() { return eraseCookie; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "elementObserver", function() { return elementObserver; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "matchHeight", function() { return matchHeight; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "invertColor", function() { return invertColor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hideOnClickOutside", function() { return hideOnClickOutside; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "imgTosvg", function() { return imgTosvg; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "compareValues", function() { return compareValues; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortArray", function() { return sortArray; });
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var setCookie = function setCookie(name, value, days) {
+  var expires = "";
+
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
+  }
+
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+};
+var getCookie = function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(";");
+
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+
+    while (c.charAt(0) == " ") {
+      c = c.substring(1, c.length);
+    }
+
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+
+  return null;
+};
+var eraseCookie = function eraseCookie(name) {
+  document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+};
+var elementObserver = function elementObserver(callback, options) {
+  if (typeof options.element != "undefined") {
+    return new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        var target = entry.target;
+
+        if (entry.isIntersecting) {
+          callback(options);
+        }
+      });
+    }, {
+      threshold: 0.5
+    }).observe(options.element);
+  }
+};
+var matchHeight = function matchHeight(selector) {
+  var objects = document.querySelectorAll(selector);
+  var heights = Array.from(objects).map(function (x, i, a) {
+    return x.offsetHeight;
+  });
+  var max = Math.max.apply(Math, _toConsumableArray(heights));
+  objects.forEach(function (el) {
+    el.style.height = "".concat(max, "px");
+  });
+};
+var invertColor = function invertColor(hex, bw) {
+  if (hex.indexOf("#") === 0) {
+    hex = hex.slice(1);
+  } // convert 3-digit hex to 6-digits.
+
+
+  if (hex.length === 3) {
+    hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+  }
+
+  if (hex.length !== 6) {
+    throw new Error("Invalid HEX color.");
+  }
+
+  var r = parseInt(hex.slice(0, 2), 16),
+      g = parseInt(hex.slice(2, 4), 16),
+      b = parseInt(hex.slice(4, 6), 16);
+
+  if (bw) {
+    // http://stackoverflow.com/a/3943023/112731
+    return r * 0.299 + g * 0.587 + b * 0.114 > 186 ? "#000000" : "#FFFFFF";
+  } // invert color components
+
+
+  r = (255 - r).toString(16);
+  g = (255 - g).toString(16);
+  b = (255 - b).toString(16); // pad each with zeros and return
+
+  return "#" + padZero(r) + padZero(g) + padZero(b);
+};
+var hideOnClickOutside = function hideOnClickOutside(element, callback, check) {
+  console.log(check);
+
+  var outsideClickListener = function outsideClickListener(event) {
+    if (!element.contains(event.target) && check) {
+      callback();
+      removeClickListener();
+    }
+  };
+
+  var removeClickListener = function removeClickListener() {
+    document.removeEventListener("click", outsideClickListener);
+  };
+
+  document.addEventListener("click", outsideClickListener);
+};
+var imgTosvg = function imgTosvg(options) {
+  var img = options["element"];
+  var index = options["index"];
+  var imgURL = img.getAttribute("src");
+  var imgID = img.getAttribute("id");
+  var imgWidth = img.getAttribute("width");
+  var imgHeight = img.getAttribute("height");
+  var imgClasses = img.getAttribute("class");
+  var xhttp = new XMLHttpRequest();
+
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var resPure = this.responseText.trim();
+      var parentDiv = document.createElement("div");
+      parentDiv.innerHTML = resPure;
+      var svg = parentDiv.querySelector("svg");
+
+      if (svg != null) {
+        if (imgID != null) {
+          svg.setAttribute("id", imgID);
+        } else {
+          svg.setAttribute("id", "replaced-svg-".concat(index));
+        }
+
+        svg.removeAttribute("xmlns:a");
+        svg.setAttribute("class", imgClasses);
+        imgWidth != null ? svg.setAttribute("width", imgWidth) : null;
+        imgHeight != null ? svg.setAttribute("height", imgHeight) : null;
+        img.parentNode.replaceChild(svg, img);
+      }
+    }
+  };
+
+  xhttp.open("GET", imgURL, true);
+  xhttp.send();
+};
+var compareValues = function compareValues(key) {
+  var order = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "asc";
+  return function innerSort(a, b) {
+    if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+      // property doesn't exist on either object
+      return 0;
+    }
+
+    var varA = typeof a[key] === "string" ? a[key].toUpperCase() : a[key];
+    var varB = typeof b[key] === "string" ? b[key].toUpperCase() : b[key];
+    var comparison = 0;
+
+    if (varA > varB) {
+      comparison = 1;
+    } else if (varA < varB) {
+      comparison = -1;
+    }
+
+    return order === "desc" ? comparison * -1 : comparison;
+  };
+};
+var sortArray = function sortArray(arr, key, order) {
+  return _toConsumableArray(arr).sort(compareValues(key, order));
+};
+
+/***/ }),
+
+/***/ "./static/src/js/components/helpers.js":
+/*!*********************************************!*\
+  !*** ./static/src/js/components/helpers.js ***!
+  \*********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helper_funcs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helper-funcs */ "./static/src/js/components/helper-funcs.js");
+
+document.addEventListener("DOMContentLoaded", function () {
+  // constants for various functions explained below (just comment the constant and the script is no longer excuted)
+  var doTrim = document.querySelectorAll("[data-trim]");
+  var detImages = document.querySelectorAll(".det-res-img");
+  var sReplace = document.querySelectorAll("[data-replace]");
+  var mobSheet = document.querySelectorAll("[data-mobilesheet]");
+  var sWidth = screen.width;
+  var removeChildTag = document.querySelectorAll("[data-removeChildTag]");
+  var aspectRatio = document.querySelectorAll('[data-aspectRatio]');
+  var colorDivs = document.querySelectorAll('[data-color]');
+  var menuIcons = document.querySelectorAll(".menu-icon");
+  var selectInputs = document.querySelectorAll(".wpcf7 select"); // colors the select field with the placeholder color until the first option is changed (first options's value has to be empty and the cf7 mixin has to be used)
+
+  if (typeof selectInputs != "undefined" && selectInputs.length > 0) {
+    selectInputs.forEach(function (select) {
+      if (select.value == "") {
+        select.classList.add("untouched");
+      }
+
+      var changeEvent = function changeEvent(e) {
+        console.log('fired');
+        select.classList.remove("untouched");
+        removeChangeEvent();
+      };
+
+      var removeChangeEvent = function removeChangeEvent() {
+        select.removeEventListener("change", changeEvent);
+      };
+
+      select.addEventListener("change", changeEvent);
+    });
+  } // adds icons to the navigation menu item if both ".menu-icon" and "icon-[image id]" classes exist in extra classes (this depends on an api endpoint)
+
+
+  if (typeof menuIcons !== "undefined" && menuIcons.length > 0) {
+    var baseUrl = window.location.origin;
+    menuIcons.forEach(function (one, i) {
+      var iconId = Array.from(one.classList).find(function (single) {
+        return /^icon-/.test(single);
+      });
+
+      if (iconId) {
+        var requestUrl = "".concat(baseUrl, "/wp-json/generaldata/v1/getimage/").concat(iconId.split("-")[1]);
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            var resPure = JSON.parse(this.responseText).trim();
+            var parentDiv = document.createElement("div");
+            parentDiv.innerHTML = resPure;
+            var img = parentDiv.querySelector("img");
+            one.prepend(img);
+            one.classList.remove(iconId); // imgTosvg({'element': img, 'index': i});
+          }
+        };
+
+        xhttp.open("GET", requestUrl, true);
+        xhttp.send();
+      }
+    });
+  } // finds all occurances of data-color and makes a css variable named --elm-color available to the div for it and all of its decendants
+
+
+  if (typeof colorDivs !== 'undefined' && colorDivs.length > 0) {
+    colorDivs.forEach(function (one) {
+      var color = one.getAttribute('data-color');
+      one.style.setProperty("--elm-color", color);
+    });
+  } // trims strings to be as long as the provided length in the 'data-trim' attribute
+
+
+  if (typeof doTrim !== 'undefined' && doTrim.length > 0) {
+    doTrim.forEach(function (one) {
+      var length = one.getAttribute("data-trim");
+      one.innerHTML = one.innerHTML.length > length ? one.innerHTML.substring(0, length) + "..." : one.innerHTML;
+      one.removeAttribute("data-trim");
+    });
+  } // determine the appropriate image to use when different images are used on mobile and desktop
+  // if (typeof detImages !== 'undefined' && detImages.length > 0) {
+  //   detImages.forEach((one) => {
+  //     if (sWidth >= 768) {
+  //       one.setAttribute(
+  //         "data-srcset",
+  //         one.getAttribute("data-srcset-desktop")
+  //       );
+  //       one.setAttribute("data-src", one.getAttribute("data-src-desktop"));
+  //     } else {
+  //       one.setAttribute("data-srcset", one.getAttribute("data-srcset-mobile"));
+  //       one.setAttribute("data-src", one.getAttribute("data-src-mobile"));
+  //     }
+  //     one.removeAttribute("data-srcset-desktop");
+  //     one.removeAttribute("data-srcset-mobile");
+  //     one.removeAttribute("data-src-desktop");
+  //     one.removeAttribute("data-src-mobile");
+  //     one.classList.add("lazyload");
+  //   });
+  // }
+  // replaces a character with another based on both 'data-replace' and 'data-replaced-with' and removes the attributes after its done
+  // if (typeof sReplace !== 'undefined' && sReplace.length > 0) {
+  //   sReplace.forEach((one) => {
+  //     var replaced = one.getAttribute("data-replace");
+  //     var replaceWith = one.getAttribute("data-replace-with");
+  //     if (replaced && replaceWith) {
+  //       one.innerHTML = one.innerHTML.replace(replaced, replaceWith);
+  //       one.removeAttribute("data-replace");
+  //       one.removeAttribute("data-replace-with");
+  //     }
+  //   });
+  // }
+  // removes an html tag from children of a node.
+  // if (typeof removeChildTag !== 'undefined' && removeChildTag.length > 0) {
+  //   removeChildTag.forEach((one) => {
+  //     let tag = one.getAttribute("data-removeChildTag");
+  //     let b = one.getElementsByTagName(tag);
+  //     while (b.length) {
+  //       let parent = b[0].parentNode;
+  //       while (b[0].firstChild) {
+  //         parent.insertBefore(b[0].firstChild, b[0]);
+  //       }
+  //       parent.removeChild(b[0]);
+  //     }
+  //   });
+  // }
+  // open bottom sheet (similar to the material bottom sheet) you should pass the following dictionary to it
+  // var dict = {
+  //   normalHeight: 'normal div height when the sheet is collapsed',
+  //   expandedHeight: 'expanded div height',
+  //   removedClasses: [
+  //     {
+  //       divClass: 'a class that always exists on the div that u want to remove a class from',
+  //       toRemove: 'a class to remove',
+  //     },
+  //   ],
+  //   addedClasses: [
+  //     {
+  //       divClass: 'a class that always exists on the div that u want to add a class to',
+  //       toAdd: 'a class to add',
+  //     },
+  //   ],
+  //   changedClasses: [
+  //     {
+  //       divClass: 'a class that always exists on the div that u want to add or remove a class to',
+  //       toChange: 'a class to change',
+  //       changeWith: 'the class to replace "to change" class with'
+  //     },
+  //   ]
+  // };
+  // if (typeof mobSheet !== 'undefined' && mobSheet.length > 0) {
+  //   mobSheet.forEach((one) => {
+  //     dict = one.getAttribute("data-mobilesheet");
+  //     data = JSON.parse(dict);
+  //     one.style.transition = "height 0.5s, box-shadow 0.2s";
+  //     let buttons = one.querySelectorAll("[data-open]");
+  //     if (buttons) {
+  //       buttons.forEach((button) => {
+  //         button.addEventListener("click", () => {
+  //           if (!one.classList.contains("open")) {
+  //             openSheet(one);
+  //           } else {
+  //             closeSheet(one);
+  //           }
+  //         });
+  //       });
+  //     }
+  //   });
+  // }
+  // determine height based on width (aspect ratio)
+
+
+  if (typeof aspectRatio !== 'undefined' && aspectRatio.length > 0) {
+    aspectRatio.forEach(function (one) {
+      var width = one.offsetWidth;
+      var aspectRatio = one.getAttribute('data-aspectRatio');
+      var height = detHeight(aspectRatio, width);
+      one.style.height = "".concat(height, "px");
+    });
+    window.addEventListener('resize', function () {
+      aspectRatio.forEach(function (one) {
+        var width = one.offsetWidth;
+        var aspectRatio = one.getAttribute('data-aspectRatio');
+        var height = detHeight(aspectRatio, width);
+        one.style.height = "".concat(height, "px");
+      });
+    });
+  }
+});
+
+var detHeight = function detHeight(aspectRatio, width) {
+  var data = aspectRatio.split('/');
+  var aspectWidth = data[0];
+  var aspectHeight = data[1];
+  var height = parseInt(width) * parseInt(aspectHeight) / parseInt(aspectWidth);
+  return height;
+};
+
+var openSheet = function openSheet(element) {
+  var buttons = element.querySelectorAll("[data-open]");
+  element.classList.add("shadow-vail", "open");
+  element.style.height = data.expandedHeight;
+  buttons.forEach(function (button) {
+    button.setAttribute("data-open", "true");
+    data.removedClasses ? data.removedClasses.forEach(function (rclass) {
+      element.querySelector(".".concat(rclass.divClass)).classList.remove(rclass.toRemove);
+    }) : null;
+    data.addedClasses ? data.addedClasses.forEach(function (aclass) {
+      element.querySelector(".".concat(aclass.divClass)).classList.add(aclass.toAdd);
+    }) : null;
+    data.changedClasses ? data.changedClasses.forEach(function (cclass) {
+      element.querySelector(".".concat(cclass.divClass)).classList.remove(cclass.toChange);
+      element.querySelector(".".concat(cclass.divClass)).classList.add(cclass.changeWith);
+    }) : null;
+  });
+  hideOnClickOutside(element);
+};
+
+var closeSheet = function closeSheet(element) {
+  var buttons = element.querySelectorAll("[data-open]");
+  element.classList.remove("shadow-vail", "open");
+  element.style.height = data.normalHeight;
+  buttons.forEach(function (button) {
+    button.setAttribute("data-open", "false");
+    data.removedClasses ? data.removedClasses.forEach(function (rclass) {
+      element.querySelector(".".concat(rclass.divClass)).classList.add(rclass.toRemove);
+    }) : null;
+    data.addedClasses ? data.addedClasses.forEach(function (aclass) {
+      element.querySelector(".".concat(aclass.divClass)).classList.remove(aclass.toAdd);
+    }) : null;
+    data.changedClasses ? data.changedClasses.forEach(function (cclass) {
+      element.querySelector(".".concat(cclass.divClass)).classList.add(cclass.toChange);
+      element.querySelector(".".concat(cclass.divClass)).classList.remove(cclass.changeWith);
+    }) : null;
+  });
+};
+
+var hideOnClickOutside = function hideOnClickOutside(element) {
+  var outsideClickListener = function outsideClickListener(event) {
+    if (!element.contains(event.target) && isVisible(element)) {
+      closeSheet(element);
+      document.removeEventListener("click", outsideClickListener);
+    }
+  };
+
+  document.addEventListener("click", outsideClickListener);
+};
+
+var isVisible = function isVisible(elem) {
+  return !!elem && !!(elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length);
+};
+
+/***/ }),
+
+/***/ "./static/src/js/components/shared.js":
+/*!********************************************!*\
+  !*** ./static/src/js/components/shared.js ***!
+  \********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helper_funcs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helper-funcs */ "./static/src/js/components/helper-funcs.js");
+
+document.addEventListener("DOMContentLoaded", function () {
+  var svgImages = document.querySelectorAll(".style-svg");
+  svgImages.forEach(function (img, index) {
+    Object(_helper_funcs__WEBPACK_IMPORTED_MODULE_0__["elementObserver"])(_helper_funcs__WEBPACK_IMPORTED_MODULE_0__["imgTosvg"], {
+      element: img,
+      index: index
+    });
+  });
+});
+
+/***/ }),
+
+/***/ "./static/src/js/components/sidebar.js":
+/*!*********************************************!*\
+  !*** ./static/src/js/components/sidebar.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var isOpen = false;
+var sideBar = document.getElementById("mySidenav");
+document.addEventListener("DOMContentLoaded", function () {
+  var togglebtn = document.querySelector(".navbar-toggler");
+  var closebtn = document.querySelector(".closebtn");
+  var sidemenuItems = document.querySelectorAll(".mobile-menu .menu-item");
+  sidemenuItems.forEach(function (item) {
+    item.addEventListener("click", function (e) {
+      e.stopPropagation();
+
+      if (item.classList.contains("menu-item-has-children")) {
+        var submenu = item.querySelector(".sub-menu");
+        var itemsNum = item.querySelectorAll(".menu-item").length;
+
+        if (submenu.classList.contains("opened")) {
+          item.classList.remove('child-menu-opened');
+          submenu.classList.remove("opened");
+          submenu.style.maxHeight = 0;
+        } else {
+          item.classList.add('child-menu-opened');
+          submenu.classList.add("opened");
+          submenu.style.maxHeight = "".concat(itemsNum * 64, "px");
+        }
+      }
+    });
+  });
+  togglebtn.addEventListener("click", function () {
+    openNav();
+    document.addEventListener("click", outsideClickListener);
+    setTimeout(function () {
+      isOpen = true;
+    }, 1000);
+  });
+  closebtn.addEventListener("click", function () {
+    closeNav();
+  });
+});
+
+var openNav = function openNav() {
+  sideBar.style.width = "100vw";
+};
+
+var closeNav = function closeNav() {
+  sideBar.style.width = "0";
+  isOpen = false;
+  removeClickListener();
+};
+
+var outsideClickListener = function outsideClickListener(event) {
+  if (!sideBar.contains(event.target) && isOpen) {
+    closeNav();
+  }
+};
+
+var removeClickListener = function removeClickListener() {
+  document.removeEventListener("click", outsideClickListener);
+};
+
+/***/ }),
+
+/***/ 0:
+/*!***************************************!*\
+  !*** multi ./static/src/js/bundle.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /media/yahia/yahia/work/tailwindpg/static/src/js/bundle.js */"./static/src/js/bundle.js");
+
+
+/***/ })
+
+/******/ });
