@@ -39,7 +39,6 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.7.0",
-    "tailwindcss-rtl": "^0.7.3",
     "fibers": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
@@ -53,6 +52,7 @@
     "postcss": "^8.2.8",
     "prettier": "^2.2.1",
     "sass": "^1.32.0",
+    "tailwindcss-rtl": "^0.7.3",
     "through2": "^3.0.1",
     "website-scraper": "^4.2.3",
     "yargs": "^15.3.1"

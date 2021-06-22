@@ -1,10 +1,16 @@
 <template>
   <div>
+    <side-bar />
+    <the-header />
     <Nuxt />
   </div>
 </template>
 <script>
+import SideBar from '~/components/UI/SideBar.vue'
+import TheHeader from '~/components/UI/TheHeader.vue'
+
 export default {
+  components: { TheHeader, SideBar },
   head() {
     const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
     const headCss =
