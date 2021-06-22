@@ -6,8 +6,6 @@ import gulpif from "gulp-if";
 import postcss from "gulp-postcss";
 import sourcemaps from "gulp-sourcemaps";
 import del from "del";
-import webpack from "webpack-stream";
-import named from "vinyl-named";
 import info from "./package.json";
 import cssnano from "cssnano";
 import Fiber from "fibers";
@@ -52,34 +50,6 @@ export const stylePurge = () => {
     .pipe(dest("static/gulpdist/css"))
 }
 
-export const scripts = () => {
-  return src(["static/src/js/bundle.js", "static/src/js/bundle-rtl.js"])
-    .pipe(named())
-    .pipe(
-      webpack({
-        module: {
-          rules: [
-            {
-              test: /\.js$/,
-              use: {
-                loader: "babel-loader",
-                options: {
-                  presets: ["@babel/preset-env"],
-                },
-              },
-            },
-          ],
-        },
-        mode: PRODUCTION ? "production" : "development",
-        devtool: false,
-        output: {
-          filename: "[name].js",
-        },
-      })
-    )
-    .pipe(dest("static/gulpdist/js"));
-};
-
 export const copy = () => {
   return src([
     "static/src/**/*",
@@ -97,20 +67,18 @@ export const watchForChanges = () => {
     ["static/src/**/*", "!src/{images,js,scss}", "!static/src/{images,js,scss}/**/*"],
     copy
   );
-  watch("static/src/js/**/*.js", scripts);
 };
 
 export const dev = series(
   clean,
-  parallel(styles, copy, scripts),
+  parallel(styles, copy),
   watchForChanges
 );
 export const build = series(
   clean,
   extractHtml,
-  scripts,
   parallel(styles, copy),
   stylePurge,
-  // extractClean,
+  extractClean,
 );
 export default dev;

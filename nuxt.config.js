@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'tailwindpg',
+    title: '%s - intest',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -36,6 +36,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    'nuxt-i18n',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -48,6 +49,25 @@ export default {
     },
   },
 
+  i18n: {
+    locales: [
+      { code: 'en', iso: 'en-US', file: 'en.js', dir: 'ltr', name: 'English' },
+      { code: 'ar', iso: 'ar-EG', file: 'ar.js', dir: 'rtl', name: 'Arabic' },
+    ],
+    defaultLocale: 'en',
+    langDir: '~/locals/',
+    lazy: true,
+    seo: false,
+    vuex: {
+      moduleName: 'i18n',
+      syncLocale: true,
+      syncMessages: false,
+      syncRouteParams: true,
+    },
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extractCSS: true,
+  },
 }
